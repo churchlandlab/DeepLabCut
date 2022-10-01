@@ -176,6 +176,7 @@ def find_outliers_in_raw_detections(
 def extract_outlier_frames(
     config,
     videos,
+    data_folder,
     videotype="",
     shuffle=1,
     trainingsetindex=0,
@@ -380,7 +381,7 @@ def extract_outlier_frames(
 
         try:
             df, dataname, _, _ = auxiliaryfunctions.load_analyzed_data(
-                videofolder, vname, DLCscorer, track_method=track_method
+                data_folder, vname, DLCscorer, track_method=track_method
             )
             nframes = len(df)
             startindex = max([int(np.floor(nframes * cfg["start"])), 0])

@@ -574,8 +574,8 @@ def get_scorer_name(
         modelfolder = os.path.join(
             cfg["project_path"],
             str(get_model_folder(trainFraction, shuffle, cfg, modelprefix=modelprefix)),
-            "train",
-        )
+            "train")
+            
         Snapshots = np.array(
             [fn.split(".")[0] for fn in os.listdir(modelfolder) if "index" in fn]
         )
